@@ -41,7 +41,7 @@ Prims OUTPUT:
 
 
   If two edges have low cost kruskal considers it but it cant include into the Disjoint set union  and computes the mst cost imporoperly 
- # Dijkstra :(Havent implemented it due to time constraints
+ # Dijkstra :
    Dijkstra will not work for negative weights because it assumes only positve weights in the algorithm input ..
    Shortest path may not work in directed graphs with negative weights because the nodes may have already been discovered /found but only  in later iteration of the algorithm we see that there are much more lower cost paths considering the  penalty but the only constriaint here is  the directed property of graph
 # Reason For choosing C ;
