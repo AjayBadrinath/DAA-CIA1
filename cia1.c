@@ -68,7 +68,7 @@ void kruskal(int graph[vtx][vtx],int n_edges){
 		}
 	}
 	sort(es,n_edges);
-	for(int i=0;i<n_edges;i++){
+	for(int i=0;i<n_edges-4;i++){
 		printf("%d %d %d\n",es[i].v1,es[i].v2,es[i].cost);
 	
 	}
@@ -112,6 +112,7 @@ int adjmat[5][5]={
 
 };
 prim(adjmat);
-//kruskal(adjmat,9);
+
+kruskal(adjmat,9);
 
 }
