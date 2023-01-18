@@ -44,3 +44,5 @@ Prims OUTPUT:
  # Dijkstra :
    Dijkstra will not work for negative weights because it assumes only positve weights in the algorithm input ..
    Shortest path may not work in directed graphs with negative weights because the nodes may have already been discovered /found but only  in later iteration of the algorithm we see that there are much more lower cost paths considering the  penalty but the only constriaint here is  the directed property of graph
+# Reason For choosing C ;
+I personally feel comfortable using C  than other languages as it allows direct memory acces and manipulation wth pointers easily i may not have used pointer here but it is more intuitive for me to use c  which is not possible in java/python ...
