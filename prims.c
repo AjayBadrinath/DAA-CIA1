@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 int vtx;
+typedef struct Edges{
+	int v1,v2;
+	int cost;
+}edge;
+
+
 
 int mincost(int cost[vtx],int mst[vtx]){
 	int min=9884743;
@@ -17,11 +23,63 @@ int mincost(int cost[vtx],int mst[vtx]){
 
 void print(int graph[vtx][vtx],int top[vtx]){
 	for(int i=1;i<vtx;i++){
-		printf("%d %d %d\n",top[i],i,graph[i][top[i]]);
+		printf("%d %d \n",top[i],i);
 	}
 
 
 }
+void sort(edge es[],int n_edges){
+int tmp_cost,v1,v2;
+	for(int i=0;i<n_edges;i++){
+		for(int j=i+1;j<n_edges;j++){
+			if(es[i].cost>es[j].cost){
+				tmp_cost=es[i].cost;
+				v1=es[i].v1;
+				v2=es[i].v2;
+				es[i].cost=es[j].cost;
+				es[i].v1=es[j].v1;
+				es[i].v2=es[j].v2;
+				es[j].cost=tmp_cost;
+				es[j].v1=v1;
+				es[j].v2=v2;
+			}	
+		}	
+	
+		
+	}
+	}
+void swap(edge* a,edge*b){
+	edge tmp=*a;
+	*a=*b;
+	*b=tmp;
+
+}
+void kruskal(int graph[vtx][vtx],int n_edges){
+	int k=0;
+	edge es[n_edges];
+	for(int i=0;i<vtx;i++){
+		for(int j=0;j<vtx;j++){
+			if(graph[i][j]!=0){
+				es[k].v1=i;
+				es[k].v2=j;
+				es[k].cost=graph[i][j];	
+				k++;
+			}
+		}
+	}
+	sort(es,n_edges);
+	for(int i=0;i<n_edges;i++){
+		printf("%d %d %d\n",es[i].v1,es[i].v2,es[i].cost);
+	
+	}
+
+}
+
+
+//void dijkstra(int graph[vtx][vtx]){
+		
+		
+//}
 void prim(int graph[vtx][vtx]){
 	int top[vtx],cost[vtx],mst[vtx];
 	for(int i=0;i<vtx;i++){
@@ -53,7 +111,7 @@ int adjmat[5][5]={
 {0,0,0,-5,0}
 
 };
-//prim(adjmat);
-kruskal(adjmat,9);
+prim(adjmat);
+//kruskal(adjmat,9);
 
 }
