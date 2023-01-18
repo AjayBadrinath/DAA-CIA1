@@ -26,6 +26,7 @@ Prims OUTPUT:
 
 # Kruskal :
   In this Problem Kruskal Algorithm Will not work because since kruskal is a greedy algorithm and  in this case the negative penalty is considered in my case ,thereby
+  But in this case it will work if we do not consider the negative weight
   accounting to a total cost of 3 which is not the mst cost we obtained in the prims ..
   Plus on top of that kruskal algorithm will not detect cylcles in a directed graph ..
   Kruskals algorithm will work only for undirected positive weighted graphs ..
